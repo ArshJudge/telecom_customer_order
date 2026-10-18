@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: telecom-platform
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:h2:mem:telecom;MODE=PostgreSQL;DB_CLOSE_DELAY=-1}
+    username: ${SPRING_DATASOURCE_USERNAME:sa}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER:org.h2.Driver}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: false
+server:
+  port: ${PORT:8080}
+  error:
+    include-message: always
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
